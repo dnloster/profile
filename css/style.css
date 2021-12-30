@@ -186,18 +186,65 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header .display-tc .profile-thumb,
 .fh5co-cover .display-tc .profile-thumb {
-  background-size: cover !important;
-  background-position: center center;
-  background-repeat: no-repeat;
   position: relative;
   height: 200px;
   width: 200px;
   margin: 0 auto;
   margin-bottom: 30px;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+}
+#fh5co-header .display-tc .profile-thumb .profile_inner,
+.fh5co-cover .display-tc .profile-thumb .profile_inner {
+  position: absolute;
+  height: 190px;
+  width: 190px;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+#fh5co-header .display-tc .profile-thumb .profile_inner img,
+.fh5co-cover .display-tc .profile-thumb .profile_inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+#fh5co-header .display-tc .profile-thumb span,
+.fh5co-cover .display-tc .profile-thumb span {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 50%;
+  left: 0;
+}
+#fh5co-header .display-tc .profile-thumb span:first-child,
+.fh5co-cover .display-tc .profile-thumb span:first-child {
+  filter: blur(5px);
+}
+#fh5co-header .display-tc .profile-thumb span:nth-child(2),
+.fh5co-cover .display-tc .profile-thumb span:nth-child(2) {
+  filter: blur(10px);
+}
+#fh5co-header .display-tc .profile-thumb span:nth-child(3),
+.fh5co-cover .display-tc .profile-thumb span:nth-child(3) {
+  filter: blur(25px);
+}
+#fh5co-header .display-tc .profile-thumb span:last-child,
+.fh5co-cover .display-tc .profile-thumb span:last-child {
+  filter: blur(150px);
 }
 #fh5co-header .display-tc .fh5co-social-icons li a,
 .fh5co-cover .display-tc .fh5co-social-icons li a {
@@ -296,6 +343,10 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-started {
   border-bottom: none;
+}
+
+.fh5co-bg-color {
+  border-bottom: 1px solid linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
 }
 
 .fh5co-bg-dark {

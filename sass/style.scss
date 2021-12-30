@@ -31,6 +31,7 @@ $brand-bg-dark: #2F3C4F;
 $input-border-focus:  $brand-primary !default;
 $form-group-margin-bottom:       30px !default;
 
+$linear-color-border: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
 
 
 // Mixin
@@ -152,7 +153,6 @@ h1, h2, h3, h4, h5, h6, figure {
   background: $brand-primary;
 }
 
-
 #fh5co-header,
 .fh5co-cover {
 	position: relative;
@@ -234,20 +234,52 @@ h1, h2, h3, h4, h5, h6, figure {
 			@media screen and (max-width: $screen-sm) {
 				font-size: 14px;
 			}
-			span{
-			}
 		}
 		.profile-thumb{
-			background-size: cover !important;
-			background-position: center center;
-			background-repeat: no-repeat;
 			position: relative;
 			height: 200px;
 			width: 200px;
 			margin: 0 auto;
 			margin-bottom: 30px;
-			// border: 1px solid rgba($brand-white,1);
+			background: $linear-color-border;
 			@include border-radius(50%);
+			& .profile_inner{
+				position: absolute;
+				height: 190px;
+				width: 190px;
+				top: 5px;
+				left: 5px;
+				z-index: 1000;
+				@include border-radius(50%);
+				& img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: 0 0;
+					@include border-radius(50%);
+				}
+			}
+			& span{
+				position: absolute;
+				height: 200px;
+				width: 200px;
+				background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+				border-radius: 50%;
+				left: 0;
+			}
+			& span:first-child{
+				filter: blur(5px)
+			}
+			& span:nth-child(2){
+				filter: blur(10px)
+			}
+			& span:nth-child(3){
+				filter: blur(25px)
+			}
+			& span:last-child{
+				filter: blur(150px)
+			}
+			// border: 1px solid rgba($brand-white,1);
 		}
 		.fh5co-social-icons {
 			li {
@@ -339,7 +371,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-bg-color{
-	// background: #233142;
+	border-bottom: 1px solid $linear-color-border;
 
 }
 .fh5co-bg-dark{
